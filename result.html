@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detection Result</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-result">
+    <div class="container premium-shell">
+        <header class="hero-header">
+            <p class="hero-kicker">Prediction Center</p>
+            <h1>Result</h1>
+            <p>Detailed disease confidence and history at a glance.</p>
+        </header>
+
+        <main class="main-shell">
+            <section class="screen active">
+                <div class="result-container">
+                    <div class="result-image-container">
+                        <img id="result-image" alt="Analyzed image">
+                    </div>
+                    <div class="result-details">
+                        <p id="result-type-badge" class="result-badge">Processing</p>
+                        <h2 id="disease-name">Processing...</h2>
+                        <p id="result-message" class="result-message">Please wait...</p>
+                        <p id="result-scanned-at" class="result-scanned-at" hidden></p>
+                        <div class="confidence-bar">
+                            <span id="confidence-text">0%</span>
+                            <div class="confidence-fill" id="confidence-fill"></div>
+                        </div>
+                        <div class="top-predictions">
+                            <h3>Top Predictions</h3>
+                            <ul id="top-prediction-list"></ul>
+                        </div>
+                        <div class="result-actions">
+                            <button type="button" id="copy-result-btn" class="secondary-btn">📋 Copy summary</button>
+                        </div>
+                        <div class="history-section">
+                            <div class="history-header history-header--actions">
+                                <h3 id="result-history-heading">Last 20 scans</h3>
+                                <div class="history-actions">
+                                    <button type="button" id="export-history-btn" class="text-btn" title="Download PDF report">Download Report</button>
+                                    <button type="button" id="clear-history-btn" class="text-btn" title="Clear list">Clear</button>
+                                </div>
+                            </div>
+                            <div class="history-filters">
+                                <input type="search" id="history-search" class="history-input" placeholder="Search disease">
+                                <select id="history-type-filter" class="history-select">
+                                    <option value="all">All types</option>
+                                    <option value="healthy">Healthy</option>
+                                    <option value="rotten">Rotten</option>
+                                    <option value="disease">Disease</option>
+                                    <option value="uncertain">Uncertain</option>
+                                </select>
+                            </div>
+                            <div id="prediction-history-list" class="history-list" aria-label="Recent predictions"></div>
+                        </div>
+                        <button id="new-analysis-btn" class="new-analysis-btn">
+                            Analyze Another Fruit
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

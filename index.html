@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit Disease Detection</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-index">
+    <div class="container premium-shell">
+        <header class="hero-header">
+            <p class="hero-kicker">AI-powered Plant Care</p>
+            <h1>🍎 Fruit Disease Detection</h1>
+            <p>Upload or capture fruit images and get instant disease insights.</p>
+            <div class="hero-chips">
+                <span class="hero-chip">Fast Detection</span>
+                <span class="hero-chip">Camera Ready</span>
+                <span class="hero-chip">Smart Reports</span>
+            </div>
+        </header>
+
+        <main class="main-shell">
+            <!-- Home Screen -->
+            <section id="home-screen" class="screen active">
+                <div class="start-panel">
+                    <h2>Start your analysis</h2>
+                    <p>Run a scan in seconds and track your recent predictions.</p>
+                </div>
+                <button id="start-btn" class="start-btn">Start Detection</button>
+            </section>
+
+            <!-- Upload Screen -->
+            <section id="upload-screen" class="screen">
+                <h2 class="section-title">Upload & Analyze</h2>
+                <div class="upload-area">
+                    <div class="preview-container" id="preview-container">
+                        <div class="preview-placeholder">
+                            <svg class="upload-icon" viewBox="0 0 24 24">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14,2 14,8 20,8"/>
+                                <line x1="12" y1="18" x2="12" y2="12"/>
+                                <line x1="9.09" y1="8.26" x2="12" y2="12"/>
+                                <line x1="14.91" y1="8.26" x2="12" y2="12"/>
+                            </svg>
+                            <p>No image selected</p>
+                        </div>
+                    </div>
+                    
+                    <div class="upload-controls">
+                        <label for="image-upload" class="upload-btn">
+                            <span>📁 Upload Image</span>
+                            <input type="file" id="image-upload" accept="image/*" hidden>
+                        </label>
+                        <button id="camera-btn" class="upload-btn camera-btn">
+                            <span>📷 Use Camera</span>
+                        </button>
+                    </div>
+                    
+                    <button id="analyze-btn" class="analyze-btn" disabled>
+                        🔍 Analyze Image
+                    </button>
+
+                    <div class="history-section history-section--upload" id="upload-history-section" aria-labelledby="upload-history-heading">
+                        <div class="history-header history-header--upload">
+                            <div class="history-title-block">
+                                <h3 id="upload-history-heading">Recent predictions</h3>
+                                <span class="history-count" id="upload-history-count" title="Saved scans"></span>
+                            </div>
+                            <button type="button" id="upload-clear-history-btn" class="text-btn" title="Clear history">Clear</button>
+                        </div>
+                        <div class="history-filters">
+                            <input type="search" id="upload-history-search" class="history-input" placeholder="Search disease">
+                            <select id="upload-history-type-filter" class="history-select">
+                                <option value="all">All types</option>
+                                <option value="healthy">Healthy</option>
+                                <option value="rotten">Rotten</option>
+                                <option value="disease">Disease</option>
+                                <option value="uncertain">Uncertain</option>
+                            </select>
+                        </div>
+                        <p class="history-hint">Each scan is saved with date and time. Click any card to open full results.</p>
+                        <div id="upload-history-list" class="history-list history-list--upload" aria-label="Recent predictions on this screen"></div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Loading Spinner -->
+        <div id="loading-spinner" class="spinner hidden">
+            <div class="spinner-content">
+                <div class="spinner-ring"></div>
+                <p>Analyzing...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

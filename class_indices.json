@@ -1,0 +1,19 @@
+{
+  "Alternaria_Mango": 0,
+  "Alternaria_Pomegranate": 1,
+  "Anthracnose_Guava": 2,
+  "Anthracnose_Mango": 3,
+  "Anthracnose_Pomegranate": 4,
+  "Bacterial_Blight_Pomegranate": 5,
+  "Black Mould Rot (Aspergillus)_Mango": 6,
+  "Blotch_Apple": 7,
+  "Cercospora_Pomegranate": 8,
+  "Fruitfly_Guava": 9,
+  "Healthy_Apple": 10,
+  "Healthy_Guava": 11,
+  "Healthy_Mango": 12,
+  "Healthy_Pomegranate": 13,
+  "Rot_Apple": 14,
+  "Scab_Apple": 15,
+  "Stem and Rot (Lasiodiplodia)_Mango": 16
+}
